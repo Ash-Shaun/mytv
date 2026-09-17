@@ -96,7 +96,7 @@ const AuthResetPasswordForm: React.FC = () => {
       {isVerifying && (
         <Turnstile
           className="flex h-fit w-full items-center justify-center"
-          siteKey={env.NEXT_PUBLIC_CAPTCHA_SITE_KEY}
+          siteKey={env.NEXT_PUBLIC_CAPTCHA_SITE_KEY!}
           onSuccess={onCaptchaSuccess}
         />
       )}
