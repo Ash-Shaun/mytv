@@ -82,7 +82,7 @@ const AuthForgotPasswordForm: React.FC<AuthFormProps> = ({ setForm }) => {
       {isVerifying && (
         <Turnstile
           className="flex h-fit w-full items-center justify-center"
-          siteKey={env.NEXT_PUBLIC_CAPTCHA_SITE_KEY}
+          siteKey={env.NEXT_PUBLIC_CAPTCHA_SITE_KEY!}
           onSuccess={onCaptchaSuccess}
         />
       )}
