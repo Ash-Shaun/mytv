@@ -5,8 +5,6 @@ export const env = createEnv({
   server: {
     PROTECTED_PATHS: z.string(),
     SUPABASE_SERVICE_ROLE_KEY: z.string().min(1),
-    REALDEBRID_API_TOKEN: z.string().optional(),
-    TORBOX_API_TOKEN: z.string().optional(),
   },
   client: {
     NEXT_PUBLIC_TMDB_ACCESS_TOKEN: z.string().min(1),

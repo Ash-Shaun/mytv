@@ -68,8 +68,6 @@ export type PlayersProps = {
   fast?: boolean;
   ads?: boolean;
   resumable?: boolean;
-  type?: "iframe" | "provider";
-  provider?: "realdebrid" | "torbox";
 };
 
 export type Settings = {
