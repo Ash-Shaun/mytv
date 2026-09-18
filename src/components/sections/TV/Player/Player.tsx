@@ -87,7 +87,6 @@ const TvShowPlayer: React.FC<TvShowPlayerProps> = ({
                 key={PLAYER.title}
                 src={PLAYER.source}
                 title={`${PLAYER.title} player`}
-                sandbox="allow-scripts allow-same-origin allow-forms allow-presentation"
                 allow="autoplay; fullscreen; picture-in-picture"
                 className={cn("z-10 h-full w-full", { "pointer-events-none": idle && !mobile })}
               />
