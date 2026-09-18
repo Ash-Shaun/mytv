@@ -106,6 +106,24 @@ export const getMoviePlayers = (id: string | number, startAt?: number): PlayersP
       source: `https://moviesapi.club/movie/${id}`,
       ads: true,
     },
+    {
+      title: "Real-Debrid",
+      source: "https://mytv.local/provider/realdebrid",
+      type: "provider",
+      provider: "realdebrid",
+      recommended: true,
+      fast: true,
+      resumable: true,
+    },
+    {
+      title: "TorBox",
+      source: "https://mytv.local/provider/torbox",
+      type: "provider",
+      provider: "torbox",
+      recommended: true,
+      fast: true,
+      resumable: true,
+    },
   ];
 };
 
@@ -221,6 +239,24 @@ export const getTvShowPlayers = (
       title: "MoviesAPI",
       source: `https://moviesapi.club/tv/${id}-${season}-${episode}`,
       ads: true,
+    },
+    {
+      title: "Real-Debrid",
+      source: "https://mytv.local/provider/realdebrid",
+      type: "provider",
+      provider: "realdebrid",
+      recommended: true,
+      fast: true,
+      resumable: true,
+    },
+    {
+      title: "TorBox",
+      source: "https://mytv.local/provider/torbox",
+      type: "provider",
+      provider: "torbox",
+      recommended: true,
+      fast: true,
+      resumable: true,
     },
   ];
 };

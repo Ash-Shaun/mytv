@@ -13,6 +13,7 @@ import { usePlayerEvents } from "@/hooks/usePlayerEvents";
 const AdsWarning = dynamic(() => import("@/components/ui/overlay/AdsWarning"));
 const TvShowPlayerHeader = dynamic(() => import("./Header"));
 const TvShowPlayerSourceSelection = dynamic(() => import("./SourceSelection"));
+const ProviderPlayer = dynamic(() => import("@/components/sections/Player/ProviderPlayer"));
 const TvShowPlayerEpisodeSelection = dynamic(() => import("./EpisodeSelection"));
 
 export interface TvShowPlayerProps {
@@ -78,12 +79,19 @@ const TvShowPlayer: React.FC<TvShowPlayerProps> = ({
         <Card shadow="md" radius="none" className="relative h-screen">
           <Skeleton className="absolute h-full w-full" />
           {seen && (
-            <iframe
-              allowFullScreen
-              key={PLAYER.title}
-              src={PLAYER.source}
-              className={cn("z-10 h-full", { "pointer-events-none": idle && !mobile })}
-            />
+            PLAYER.type === "provider" && PLAYER.provider ? (
+              <ProviderPlayer provider={PLAYER.provider} title={PLAYER.title} />
+            ) : (
+              <iframe
+                allowFullScreen
+                key={PLAYER.title}
+                src={PLAYER.source}
+                title={`${PLAYER.title} player`}
+                sandbox="allow-scripts allow-same-origin allow-forms allow-presentation"
+                allow="autoplay; fullscreen; picture-in-picture"
+                className={cn("z-10 h-full w-full", { "pointer-events-none": idle && !mobile })}
+              />
+            )
           )}
         </Card>
       </div>
