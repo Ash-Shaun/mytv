@@ -61,6 +61,8 @@ export type SiteConfigType = {
   };
 };
 
+export type ProviderName = "realdebrid";
+
 export type PlayersProps = {
   title: string;
   source: `https://${string}`;
@@ -68,6 +70,12 @@ export type PlayersProps = {
   fast?: boolean;
   ads?: boolean;
   resumable?: boolean;
+  type?: "iframe" | "provider";
+  provider?: ProviderName;
+  providerQuery?: string;
+  providerContentType?: ContentType;
+  providerSeason?: number;
+  providerEpisode?: number;
 };
 
 export type Settings = {

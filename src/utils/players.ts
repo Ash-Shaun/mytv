@@ -9,7 +9,7 @@ import { PlayersProps } from "@/types";
  * @returns {PlayersProps[]} - An array of objects, each containing
  * the title of the player and the corresponding source URL.
  */
-export const getMoviePlayers = (id: string | number, startAt?: number): PlayersProps[] => {
+export const getMoviePlayers = (id: string | number, startAt?: number, title?: string): PlayersProps[] => {
   return [
     {
       title: "VidLink",
@@ -106,6 +106,17 @@ export const getMoviePlayers = (id: string | number, startAt?: number): PlayersP
       source: `https://moviesapi.club/movie/${id}`,
       ads: true,
     },
+    {
+      title: "Real-Debrid",
+      source: "https://mytv.local/provider/realdebrid",
+      type: "provider",
+      provider: "realdebrid",
+      providerQuery: title,
+      providerContentType: "movie",
+      recommended: true,
+      fast: true,
+      resumable: true,
+    },
   ];
 };
 
@@ -125,6 +136,7 @@ export const getTvShowPlayers = (
   season: number,
   episode: number,
   startAt?: number,
+  title?: string,
 ): PlayersProps[] => {
   return [
     {
@@ -221,6 +233,19 @@ export const getTvShowPlayers = (
       title: "MoviesAPI",
       source: `https://moviesapi.club/tv/${id}-${season}-${episode}`,
       ads: true,
+    },
+    {
+      title: "Real-Debrid",
+      source: "https://mytv.local/provider/realdebrid",
+      type: "provider",
+      provider: "realdebrid",
+      providerQuery: title,
+      providerContentType: "tv",
+      providerSeason: season,
+      providerEpisode: episode,
+      recommended: true,
+      fast: true,
+      resumable: true,
     },
   ];
 };
