@@ -1,6 +1,7 @@
 "use client";
 
 import BackButton from "@/components/ui/button/BackButton";
+import { BiSearchAlt2, BiSolidSearchAlt2 } from "react-icons/bi";
 import { siteConfig } from "@/config/site";
 import { cn } from "@/utils/helpers";
 import { Navbar, NavbarBrand, NavbarContent, NavbarItem } from "@heroui/react";
@@ -58,13 +59,25 @@ const TopNavbar = () => {
         </NavbarContent>
       )}
       <NavbarContent justify="end">
-        <NavbarItem className="flex gap-1">
-          <SearchInput />
-          <ThemeSwitchDropdown />
-          <FullscreenToggleButton />
-          <UserProfileButton />
-        </NavbarItem>
-      </NavbarContent>
+  <NavbarItem className="flex items-center gap-1">
+    <ThemeSwitchDropdown />
+    <FullscreenToggleButton />
+
+    <Link
+      href="/search"
+      aria-label="Search"
+      className="flex size-8 items-center justify-center"
+    >
+      {pathName.startsWith("/search") ? (
+        <BiSolidSearchAlt2 className="size-6" />
+      ) : (
+        <BiSearchAlt2 className="size-6" />
+      )}
+    </Link>
+
+    <UserProfileButton />
+  </NavbarItem>
+</NavbarContent>
     </Navbar>
   );
 };
