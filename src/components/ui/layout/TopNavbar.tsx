@@ -59,6 +59,7 @@ const TopNavbar = () => {
       )}
       <NavbarContent justify="end">
         <NavbarItem className="flex gap-1">
+          <SearchInput />
           <ThemeSwitchDropdown />
           <FullscreenToggleButton />
           <UserProfileButton />
